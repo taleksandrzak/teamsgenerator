@@ -18,7 +18,7 @@ teamA = teams.slice(0, 5);
 teamB = teams.slice(5, 10);
 teamC = teams.slice(10, 15);
 
-document.querySelector(".btn").addEventListener("click", function () {
+document.querySelector(".butn").addEventListener("click", function () {
   document.querySelector(".teamA").textContent = `Drużyna A to: ${teamA}`;
   document.querySelector(".teamB").textContent = `Drużyna B to: ${teamB}`;
   document.querySelector(".teamC").textContent = `Drużyna C to: ${teamC}`;
