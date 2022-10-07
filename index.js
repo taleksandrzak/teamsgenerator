@@ -18,8 +18,36 @@ teamA = teams.slice(0, 5);
 teamB = teams.slice(5, 10);
 teamC = teams.slice(10, 15);
 
-document.querySelector(".butn").addEventListener("click", function () {
-  document.querySelector(".teamA").textContent = `Drużyna A to: ${teamA}`;
-  document.querySelector(".teamB").textContent = `Drużyna B to: ${teamB}`;
-  document.querySelector(".teamC").textContent = `Drużyna C to: ${teamC}`;
-});
+const txt1 = document.getElementById("tbuser");
+const btn1 = document.getElementById("btn1");
+let wejscie = "";
+let sklad = [];
+
+function fun1() {
+  wejscie = txt1.value;
+  sklad = wejscie.split(",");
+  console.log(sklad);
+
+  document.querySelector(".teamA").textContent = `Drużyna A to: 
+  ${sklad[teamA[0]]}
+  ${sklad[teamA[1]]}
+  ${sklad[teamA[2]]}
+  ${sklad[teamA[3]]}
+  ${sklad[teamA[4]]}`;
+
+  document.querySelector(".teamB").textContent = `Drużyna B to: 
+  ${sklad[teamB[0]]}
+  ${sklad[teamB[1]]}
+  ${sklad[teamB[2]]}
+  ${sklad[teamB[3]]}
+  ${sklad[teamB[4]]}`;
+
+  document.querySelector(".teamC").textContent = `Drużyna C to: 
+  ${sklad[teamC[0]]}
+  ${sklad[teamC[1]]}
+  ${sklad[teamC[2]]}
+  ${sklad[teamC[3]]}
+  ${sklad[teamC[4]]}`;
+}
+
+btn1.addEventListener("click", fun1);
