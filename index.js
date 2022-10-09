@@ -1,82 +1,83 @@
-let teams = []; // empty array for
-let i = 11;
+let num12 = []; // empty array for 12 random numbers form 0 to 11
+let i = 12; // iteration varible for generation 12 random numbers
+let n; // declaration varible for generation random number from 0 to 11
+let num3 = []; // empty array for 3 random numbers form 0 to 2
+let j = 3; // iteration varible for generation 3 random numbers
+let m; // declaration varible for generation random number from 0 to 2
 
-let n = Math.floor(Math.random() * 12); //generate random number 0-11
-teams.push(n); // push first random number to array teams
-
-// adds 11 random numbers to array teams
+// generation array num12 with 12 random numbers from 0 to 11
 while (i > 0) {
-  n = Math.floor(Math.random() * 12);
-  if (!teams.includes(n)) {
-    teams.push(n);
+  n = Math.floor(Math.random() * 12); // generation random number from 0 to 11
+  if (!num12.includes(n)) {
+    //check that new generated number is in array num12. If not we add this number to array num12
+    num12.push(n);
     i--;
   }
 }
 
-let teams2 = []; // empty array for
-let j = 2;
-
-let n2 = Math.floor(Math.random() * 3); //generate random number 0-2
-teams2.push(n2);
-
-// create array of 3 random integers
+// generation array num3 with 3 random numbers from 0 to 2
 while (j > 0) {
-  n2 = Math.floor(Math.random() * 3);
-  if (!teams2.includes(n2)) {
-    teams2.push(n2);
+  m = Math.floor(Math.random() * 3); // generation random number from 0 to 2
+  if (!num3.includes(m)) {
+    //check that new generated number is in array num3. If not we add this number to array num3
+    num3.push(m);
     j--;
   }
 }
 
-// deviding array teams for 3 teams
-teamA = teams.slice(0, 4);
-teamB = teams.slice(4, 8);
-teamC = teams.slice(8, 12);
+// deviding array num12 for three arrays (teamA, teamB, teamC) wiith 4 elements
+teamA = num12.slice(0, 4);
+teamB = num12.slice(4, 8);
+teamC = num12.slice(8, 12);
 
 function fun1() {
-  const wejscie = document.getElementById("tbuser").value;
-  const sklad = wejscie.split(",");
-  let sklad2 = [];
-  let sklad3 = [];
-  let sklad4 = [];
+  const listFB = document.getElementById("txtarea").value; // take the list paste form FB
+  const splitedListFB = listFB.split(","); // dividing array wejscie for 17 elements using comma separator
 
+  let seddedPlayers = []; // array for  3 sedded players
+  let otherPlayers = []; // array for  12 other players players
+
+  //generation array with 12 other players players, dot is separator
   for (let i = 1; i <= 15; i++) {
-    if (sklad[i].slice(3, 4) === ".") {
-      sklad4.push(sklad[i].slice(4, sklad[i].length));
+    if (splitedListFB[i].slice(3, 4) === ".") {
+      otherPlayers.push(splitedListFB[i].slice(4, splitedListFB[i].length));
     }
   }
 
+  //generation array with 3 other players players, semicolon is separator
   for (let i = 1; i <= 15; i++) {
-    if (sklad[i].slice(3, 4) === ";") {
-      sklad3.push(sklad[i].slice(4, sklad[i].length));
+    if (splitedListFB[i].slice(3, 4) === ";") {
+      seddedPlayers.push(splitedListFB[i].slice(4, splitedListFB[i].length));
     }
   }
 
+  // print results on screen
   document.querySelector(".roz").textContent = `Osoby rozstawione to:
-  ${sklad3[0]},
-  ${sklad3[1]},
-  ${sklad3[2]}`;
+  ${seddedPlayers[0]},
+  ${seddedPlayers[1]},
+  ${seddedPlayers[2]}`;
 
   document.querySelector(".teamA").textContent = `Drużyna A to:
-  ${sklad4[teamA[0]]},
-  ${sklad4[teamA[1]]},
-  ${sklad4[teamA[2]]},
-  ${sklad4[teamA[3]]},
-  ${sklad3[teams2[0]]},`;
+  ${otherPlayers[teamA[0]]},
+  ${otherPlayers[teamA[1]]},
+  ${otherPlayers[teamA[2]]},
+  ${otherPlayers[teamA[3]]},
+  ${seddedPlayers[num3[0]]}`;
 
   document.querySelector(".teamB").textContent = `Drużyna B to:
-  ${sklad4[teamB[0]]},
-  ${sklad4[teamB[1]]},
-  ${sklad4[teamB[2]]},
-  ${sklad4[teamB[3]]},
-  ${sklad3[teams2[1]]},`;
+  ${otherPlayers[teamB[0]]},
+  ${otherPlayers[teamB[1]]},
+  ${otherPlayers[teamB[2]]},
+  ${otherPlayers[teamB[3]]},
+  ${seddedPlayers[num3[1]]}`;
 
   document.querySelector(".teamC").textContent = `Drużyna C to:
-  ${sklad4[teamC[0]]},
-  ${sklad4[teamC[1]]},
-  ${sklad4[teamC[2]]},
-  ${sklad4[teamC[3]]},
-  ${sklad3[teams2[2]]},`;
+  ${otherPlayers[teamC[0]]},
+  ${otherPlayers[teamC[1]]},
+  ${otherPlayers[teamC[2]]},
+  ${otherPlayers[teamC[3]]},
+  ${seddedPlayers[num3[2]]}`;
 }
 
+// button event listener
 document.getElementById("btn1").addEventListener("click", fun1);
