@@ -57,21 +57,21 @@ function fun1() {
   ${seddedPlayers[1]},
   ${seddedPlayers[2]}`;
 
-  document.querySelector(".teamA").textContent = `Drużyna A to:
+  document.querySelector(".teamA").textContent = `Drużyna A (żółci) to:
   ${otherPlayers[teamA[0]]},
   ${otherPlayers[teamA[1]]},
   ${otherPlayers[teamA[2]]},
   ${otherPlayers[teamA[3]]},
   ${seddedPlayers[num3[0]]}`;
 
-  document.querySelector(".teamB").textContent = `Drużyna B to:
+  document.querySelector(".teamB").textContent = `Drużyna B (niebiescy) to:
   ${otherPlayers[teamB[0]]},
   ${otherPlayers[teamB[1]]},
   ${otherPlayers[teamB[2]]},
   ${otherPlayers[teamB[3]]},
   ${seddedPlayers[num3[1]]}`;
 
-  document.querySelector(".teamC").textContent = `Drużyna C to:
+  document.querySelector(".teamC").textContent = `Drużyna C (czerwoni) to:
   ${otherPlayers[teamC[0]]},
   ${otherPlayers[teamC[1]]},
   ${otherPlayers[teamC[2]]},
