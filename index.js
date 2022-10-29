@@ -46,7 +46,7 @@ teamC = num9.slice(6, 11);
 
 function fun1() {
   const listFB = document.getElementById("txtarea").value; // take the list paste form FB
-  const splitedListFB = listFB.split(","); // dividing array wejscie for 17 elements using comma separator
+  const splitedListFB = listFB.split("\n"); // dividing array wejscie  using new-line separator
 
 
 
