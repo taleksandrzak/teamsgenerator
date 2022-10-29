@@ -43,9 +43,12 @@ teamA = num9.slice(0, 3);
 teamB = num9.slice(3, 6);
 teamC = num9.slice(6, 11);
 
+
 function fun1() {
   const listFB = document.getElementById("txtarea").value; // take the list paste form FB
   const splitedListFB = listFB.split(","); // dividing array wejscie for 17 elements using comma separator
+
+
 
   let seddedPlayersLow = []; // array for  3 sedded players with lower average
   let seddedPlayersHigh = []; // array for  3 sedded players with hogher average
@@ -53,26 +56,27 @@ function fun1() {
 
   //generation array with 9 other players players, dot is separator
   for (let i = 1; i <= 15; i++) {
-    if (splitedListFB[i].slice(3, 4) === ".") {
+    if (splitedListFB[i].includes(".")) {
       otherPlayers.push(splitedListFB[i].slice(4, splitedListFB[i].length));
     }
   }
 
   //generation array with 3  players with lower average , semicolon is separator
   for (let i = 1; i <= 15; i++) {
-    if (splitedListFB[i].slice(3, 4) === ";") {
+    if (splitedListFB[i].includes(";")) {
       seddedPlayersLow.push(splitedListFB[i].slice(4, splitedListFB[i].length));
     }
   }
 
   //generation array with 3  players with higher average, semicolon is exclamation mark
   for (let i = 1; i <= 15; i++) {
-    if (splitedListFB[i].slice(3, 4) === "!") {
+    if (splitedListFB[i].includes("!")) {
       seddedPlayersHigh.push(
         splitedListFB[i].slice(4, splitedListFB[i].length)
       );
     }
   }
+
 
   // print results on screen
 
